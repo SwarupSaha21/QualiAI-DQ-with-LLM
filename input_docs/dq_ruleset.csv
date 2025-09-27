@@ -1,0 +1,7 @@
+"Field","Rule"
+"Address_Type","Mandatory field. Must be among 1,2,3,4."
+"Address_Line_1","Cannot be only special characters and is a mandatory field so it should not be empty."
+"Address_Line_2","Not a required field but should have characters <=30."
+"Country","Mandatory field. Must be a valid ISO 2 country code."
+"City","Mandatory Field. Must be within 30 characters."
+"Postal_Code","Mandatory field. IF Country field has a value as NL, to elaborate, postal code should start with a digit from 1-9 then followed by exactly 3 digits,followed by two alphabets in CAPS ,for example, 1234LL,8882OO,9999AB"
