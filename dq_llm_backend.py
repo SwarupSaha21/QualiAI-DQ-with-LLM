@@ -23,12 +23,12 @@ class AgentState(dict):
     dataset_path: str
     ruleset_path:str
 
-# loader  = CSVLoader(file_path='F:\langgraph_edenmarco\duckdb_dq\dq_ruleset.csv')
+
 
 # Step1: ingest data to duckdb
 def ingest_data(state:AgentState):
     # Path to your CSV file
-    csv_path = "F:\DQ_WITH_LLM\input_docs\dummy_address.csv"
+    csv_path = "F:\path\to\file.csv"
 
     # Path to your DuckDB database file (creates one if it doesn't exist)
     db_path = "my_database.duckdb"
@@ -61,7 +61,7 @@ def fetch_col_names(state:AgentState):
 
 
 def parse_ruleset(state:AgentState):
-    loader  = CSVLoader(file_path='F:\DQ_WITH_LLM\input_docs\dq_ruleset.csv')
+    loader  = CSVLoader(file_path='F:\path\to\file.csv')
     data = loader.load()
     str_pg=''
     for row in data:
@@ -139,7 +139,7 @@ def execute_sql(state: AgentState):
         conn = duckdb.connect(db_path)
         res = conn.execute(clean_sql_query).fetchdf()
 
-        res.to_csv("F:\DQ_WITH_LLM\output\output_new.csv", index=False)
+        res.to_csv("F:\path\to\file.csv", index=False)
 
 
         return {**state, "result": "CSV file successfully written to path", "error": None}
