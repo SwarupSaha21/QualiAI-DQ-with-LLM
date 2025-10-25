@@ -125,7 +125,7 @@ def generate_sql(state: AgentState):
     return {**state, "sql_query": sql_query, "error": None}
 
 def execute_sql(state: AgentState):
-    """Execute the generated sql in duck db"""
+    """Execute the generated sql in DuckDB"""
     raw_sql = state['sql_query']
 
     if raw_sql.startswith("```") and raw_sql.endswith("```"):
